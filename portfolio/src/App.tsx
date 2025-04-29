@@ -1,29 +1,22 @@
-import About from "./components/About";
-import Experiences from "./components/Experiences";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./views/Home";
+import About from "./views/About";
+import Experiences from "./views/Experiences";
+import Projects from "./views/Projects";
 import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 
-export default function App() {
+function App() {
   return (
-    <div>
-
-      <div className="">
-        <Navbar />
-        <Home />
-        <About />
-
-      </div>
-
-
-      <div className="">
-        <Experiences />
-        <Projects />
-      </div>
-
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/experiences" element={<Experiences />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
       <Footer />
-
-    </div>
-  )
+    </Router>
+  );
 }

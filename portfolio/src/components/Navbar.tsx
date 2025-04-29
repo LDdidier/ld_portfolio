@@ -1,47 +1,52 @@
 import { Container } from "lucide-react";
+import { Link } from "react-router-dom";
+import ld_logo from "../assets/ld_logo.png";
 
 const Navbar = () => {
     return (
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 shadow-lg">
             <div className="flex justify-between items-center max-w-screen-xl mx-auto">
                 {/* Logo */}
-                <a href="#"
+                <Link
+                    to="/"
                     className="flex items-center text-white font-bold text-3xl md:text-xl transition-transform duration-300 hover:scale-110"
                 >
-                    <Container className="mr-2 text-white" />
-                    Ld_Didier   
-                    <span className="text-accent">DEV</span>
-                </a>
+                    <img src={ld_logo} alt="logo_ld didier" className="w-14 rounded-sm" />
+                </Link>
 
                 {/* Navigation */}
                 <ul className="hidden md:flex space-x-8 text-white">
                     <li>
-                        <a href="#Home"
+                        <Link
+                            to="/"
                             className="text-lg font-medium transition-colors duration-300 hover:text-yellow-400"
                         >
                             Accueil
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#About"
+                        <Link
+                            to="/about"
                             className="text-lg font-medium transition-colors duration-300 hover:text-yellow-400"
                         >
                             À propos
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#Experiences"
+                        <Link
+                            to="/experiences"
                             className="text-lg font-medium transition-colors duration-300 hover:text-yellow-400"
                         >
                             Mes expériences
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#Projects"
+                        <Link
+                            to="/projects"
                             className="text-lg font-medium transition-colors duration-300 hover:text-yellow-400"
                         >
                             Mes projets
-                        </a>
+                        </Link>
                     </li>
                 </ul>
 
@@ -54,6 +59,6 @@ const Navbar = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Navbar;

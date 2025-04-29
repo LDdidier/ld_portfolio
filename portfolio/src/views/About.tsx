@@ -1,6 +1,6 @@
-import Title from "./Title";
 import didier from '../assets/didier.jpeg';
 import { CalendarSync, LetterText, Paintbrush } from "lucide-react";
+import Navbar from '../components/Navbar';
 
 const aboutSections = [
     {
@@ -26,7 +26,7 @@ const aboutSections = [
 const About = () => {
     return (
         <section className="bg-gray-100 py-20 px-6 md:px-16" id="About">
-            <Title title="À propos de moi" />
+            
 
             <div className="container mx-auto grid md:grid-cols-3 gap-12 items-center">
                 

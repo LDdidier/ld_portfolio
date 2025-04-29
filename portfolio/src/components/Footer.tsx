@@ -1,32 +1,47 @@
-import { Container, Facebook, Twitter, Youtube } from "lucide-react"
+import { Facebook, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
-    return (
-        <footer className="footer footer-center  p-10">
-            <aside>
+  return (
+    <footer className="bg-gray-900 text-white py-10 px-4 mt-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+        {/* Branding & Copyright */}
+        <div className="text-center md:text-left">
+          <h2 className="text-xl font-semibold text-blue-400">Ld_didier</h2>
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} - Tous droits réservés.
+          </p>
+        </div>
 
-                <Container className="w-10 h-10" />
-                <p className="font-bold">
-                    LUC
-                    <span className="text-accent">DEV</span>
-                </p>
-                <p>Copyright © {new Date().getFullYear()} -  Tous droits réservés</p>
-            </aside>
-            <nav>
-                <div className="grid grid-flow-col gap-4">
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="w-6 h-6 text-current" />
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                        <Youtube className="w-6 h-6 text-current" />
-                    </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                        <Facebook className="w-6 h-6 text-current" />
-                    </a>
-                </div>
-            </nav>
-        </footer>
-    )
-}
+        {/* Social Links */}
+        <div className="flex gap-6">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400 transition"
+          >
+            <Twitter className="w-6 h-6" />
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red-500 transition"
+          >
+            <Youtube className="w-6 h-6" />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-600 transition"
+          >
+            <Facebook className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
