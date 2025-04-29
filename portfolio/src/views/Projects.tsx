@@ -70,8 +70,9 @@ const Projects = () => {
     return (
         <>
             <Navbar />
-            <div id="Projects" className="min-h-screen bg-gray-100 py-12 pt-16 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-7xl mx-auto">
+            <div id="Projects" className="min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+                {/* Ajout de padding-top pour compenser la navbar fixe */}
+                <div className="pt-20 pb-12 max-w-7xl mx-auto">
                     <h1 className="text-3xl font-bold text-center text-gray-800 mb-12">Mes Projets</h1>
                     
                     <div className="grid md:grid-cols-3 gap-8">
