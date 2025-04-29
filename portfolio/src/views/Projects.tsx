@@ -3,13 +3,26 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import mooves from "../assets/mooves.png";
 import dash from "../assets/dash.mp4";
+import dashboard from "../assets/dashboard.png";
 
+type ProjectType = "link" | "video";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  type: ProjectType;
+  imageUrl?: string;
+  projectUrl?: string;
+  videoUrl?: string;
+}
 
 const Projects = () => {
     const [showVideoModal, setShowVideoModal] = useState(false);
-    const [currentVideo, setCurrentVideo] = useState(null);
+    const [currentVideo, setCurrentVideo] = useState<string | null>(null);
 
-    const projects = [
+    const projects: Project[] = [
         {
             id: 1,
             title: "My Rotten Tomatoes",
@@ -38,9 +51,15 @@ const Projects = () => {
         },
     ];
 
-    const openVideoModal = (videoUrl) => {
+    const openVideoModal = (videoUrl: string) => {
         setCurrentVideo(videoUrl);
         setShowVideoModal(true);
+    };
+
+    const handleVideoClick = (project: Project) => {
+        if (project.type === "video" && project.videoUrl) {
+            openVideoModal(project.videoUrl);
+        }
     };
 
     const closeVideoModal = () => {
@@ -61,10 +80,10 @@ const Projects = () => {
                                 {project.type === "video" ? (
                                     <div 
                                         className="w-full h-48 bg-gray-200 flex items-center justify-center cursor-pointer relative group"
-                                        onClick={() => openVideoModal(project.videoUrl)}
+                                        onClick={() => handleVideoClick(project)}
                                     >
                                         <img 
-                                            src="https://via.placeholder.com/300x200" 
+                                            src={dashboard} 
                                             alt="Miniature vidéo" 
                                             className="absolute inset-0 w-full h-full object-cover"
                                         />
@@ -78,7 +97,7 @@ const Projects = () => {
                                     </div>
                                 ) : (
                                     <img 
-                                        src={project.imageUrl} 
+                                        src={project.imageUrl || "https://via.placeholder.com/300x200"} 
                                         alt={project.title} 
                                         className="w-full h-48 object-cover"
                                     />
@@ -98,8 +117,9 @@ const Projects = () => {
 
                                     {project.type === "video" ? (
                                         <button
-                                            onClick={() => openVideoModal(project.videoUrl)}
+                                            onClick={() => handleVideoClick(project)}
                                             className="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors duration-300"
+                                            disabled={!project.videoUrl}
                                         >
                                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
@@ -108,7 +128,7 @@ const Projects = () => {
                                         </button>
                                     ) : (
                                         <a 
-                                            href={project.projectUrl} 
+                                            href={project.projectUrl || "#"} 
                                             className="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors duration-300"
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -127,7 +147,7 @@ const Projects = () => {
             </div>
 
             {/* Modal Video */}
-            {showVideoModal && (
+            {showVideoModal && currentVideo && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
                     <div className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden">
                         <button
