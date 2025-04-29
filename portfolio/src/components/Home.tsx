@@ -1,5 +1,4 @@
 import { Mail, Download } from "lucide-react";
-import ld from "../assets/ld.jpeg"; // Assurez-vous que c'est une image sans fond (.png)
 
 const Home = () => {
     const onButtonClick = () => {
