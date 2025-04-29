@@ -41,10 +41,10 @@ const About = () => {
                 {/* Introduction Texte */}
                 <div className="text-center md:text-left space-y-6">
                     <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                        🚀 Passionné par le développement web, je transforme les idées en applications performantes et interactives. Mon expertise s'étend du développement frontend, avec des interfaces modernes et réactives, au backend, où je veille à la stabilité et la sécurité des systèmes.
+                        Passionné par le développement web, je transforme les idées en applications performantes et interactives. Mon expertise s'étend du développement frontend, avec des interfaces modernes et réactives, au backend, où je veille à la stabilité et la sécurité des systèmes.
                     </p>
                     <p className="text-lg text-gray-700 font-medium">
-                        🎨 Mon engagement : concevoir des solutions innovantes avec une attention particulière à l'UI/UX, garantissant une expérience utilisateur immersive et intuitive.
+                        Mon engagement : concevoir des solutions innovantes avec une attention particulière à l'UI/UX, garantissant une expérience utilisateur immersive et intuitive.
                     </p>
                 </div>
 
