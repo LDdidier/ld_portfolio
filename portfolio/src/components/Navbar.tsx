@@ -48,6 +48,14 @@ const Navbar = () => {
                             Mes projets
                         </Link>
                     </li>
+                    <li>
+                        <Link
+                            to="/contact"
+                            className="text-lg font-medium transition-colors duration-300 hover:text-yellow-400"
+                        >
+                            Contact Me
+                        </Link>
+                    </li>
                 </ul>
 
                 {/* Mobile Menu Button */}

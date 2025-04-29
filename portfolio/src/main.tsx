@@ -8,6 +8,7 @@ import Home from './views/Home'
 import Experiences from './views/Experiences'
 import About from './views/About'
 import Projects from './views/Projects'
+import Contact from './views/Contact'
 
 const root = createRoot(document.getElementById('root')!)
 
@@ -19,6 +20,7 @@ root.render(
         <Route path="/experiences" element={<Experiences />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -2,7 +2,7 @@ import { Facebook, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10 px-4 mt-20">
+    <footer className="bg-gray-900 text-white py-10 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         {/* Branding & Copyright */}
         <div className="text-center md:text-left">
