@@ -1,6 +1,5 @@
 import didier from '../assets/didier.jpeg';
 import { CalendarSync, LetterText, Paintbrush } from "lucide-react";
-import Navbar from '../components/Navbar';
 
 const aboutSections = [
     {
